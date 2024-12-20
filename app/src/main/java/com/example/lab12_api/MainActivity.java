@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                     if (response.code() == 200) {// 判斷回應狀態碼是否為200及回傳是否有值
-                        if(response.body() == null) return;
+                        if(response.body() != null) return;
                         // 使用 Gson 將 JSON 字串轉換為 Data 物件
                         Data data = new Gson().fromJson(response.body().string(), Data.class);
 
